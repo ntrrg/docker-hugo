@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ntrrg/docker-hugo/raw/master/LICENSE)
+![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)
 
 ## Usage
 
