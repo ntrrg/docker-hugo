@@ -3,16 +3,17 @@
 
 ## Usage
 
+All the commands from the Hugo CLI are available, use `docker run --rm ntrrg/hugo help` or see the [official documentation](https://gohugo.io/commands/).
+
 ```sh
-docker run \
-  --name my_site \
-  -it \
-  -p 1313:1313
-  -v /path/to/my/site:/site
-ntrrg/hugo
+docker run --rm -it -p 1313:1313 -v /path/to/my/site:/site ntrrg/hugo
 ```
 
-All the commands from the Hugo CLI are available, use `docker run --rm ntrrg/hugo help` or see the [official documentation](https://gohugo.io/commands/).
+If a custom port is needed run:
+
+```sh
+PORT=8080; docker run --rm -it -e PORT=${PORT} -p ${PORT}:${PORT} -v /path/to/my/site:/site ntrrg/hugo
+```
 
 ## Acknowledgment
 
@@ -41,4 +42,6 @@ Working on this project I use/used:
 * [Github](https://github.com)
 
 * [Hugo](https://gohugo.io)
+
+https://github.com/gohugoio/hugo/issues/2205
 
