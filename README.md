@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ntrrg/docker-hugo/raw/master/LICENSE)
+
 ![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)
 
 ## Usage
@@ -12,7 +13,12 @@ docker run --rm -it -p 1313:1313 -v /path/to/my/site:/site ntrrg/hugo
 If a custom port is needed run:
 
 ```sh
-PORT=8080; docker run --rm -it -e PORT=${PORT} -p ${PORT}:${PORT} -v /path/to/my/site:/site ntrrg/hugo
+PORT=8080; docker run \
+  --rm -it \
+  -e PORT=${PORT} \
+  -p ${PORT}:${PORT} \
+  -v /path/to/my/site:/site \
+ntrrg/hugo
 ```
 
 ## Acknowledgment
