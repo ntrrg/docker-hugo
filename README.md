@@ -13,10 +13,10 @@ docker run --rm -it -p 1313:1313 -v /path/to/my/site:/site ntrrg/hugo
 If a custom port is needed run:
 
 ```sh
-PORT=8080; docker run \
+PORT=8080 docker run \
   --rm -it \
-  -e PORT=${PORT} \
-  -p ${PORT}:${PORT} \
+  -e PORT=$PORT \
+  -p $PORT:$PORT \
   -v /path/to/my/site:/site \
 ntrrg/hugo
 ```
