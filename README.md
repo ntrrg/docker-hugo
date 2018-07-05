@@ -1,8 +1,8 @@
 [![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)](https://store.docker.com/community/images/ntrrg/hugo/)
 
-* `latest`, `0.42.1-1` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1-1/Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1-1.svg)](https://microbadger.com/images/ntrrg/md-linter:0.42.1-1 "Get your own image badge on microbadger.com")
+* `latest`, `0.42.1.1` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1.1/Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1.1.svg)](https://microbadger.com/images/ntrrg/md-linter:0.42.1.1 "Get your own image badge on microbadger.com")
 
-`0.42.1-1-onbuild` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1-1/onbuild.Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1-1-onbuild.svg)](https://microbadger.com/images/ntrrg/md-linter:0.42.1-1-onbuild "Get your own image badge on microbadger.com")
+* `0.42.1.1-onbuild` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1.1/onbuild.Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1.1-onbuild.svg)](https://microbadger.com/images/ntrrg/md-linter:0.42.1.1-onbuild "Get your own image badge on microbadger.com")
 
 * `0.42.1` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1/Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1.svg)](https://microbadger.com/images/ntrrg/md-linter:0.42.1 "Get your own image badge on microbadger.com")
 
@@ -17,13 +17,13 @@
 All the commands from the Hugo CLI are available, for extra information use
 `docker run --rm ntrrg/hugo help` or see the [official documentation](https://gohugo.io/commands/).
 
-```sh
+```shell-session
 docker run --rm -it -p 1313:1313 -v /path/to/my/site:/site ntrrg/hugo
 ```
 
 If a custom port is needed run:
 
-```sh
+```shell-session
 PORT=8080; docker run \
   --rm -it \
   -e PORT=$PORT \
