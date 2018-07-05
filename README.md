@@ -1,10 +1,21 @@
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ntrrg/docker-hugo/raw/master/LICENSE)
+[![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)](https://store.docker.com/community/images/ntrrg/hugo/)
 
-![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)
+* `latest`, `0.42.1-1` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1-1/Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1-1.svg)](https://microbadger.com/images/ntrrg/md-linter:0.42.1-1 "Get your own image badge on microbadger.com")
+
+`0.42.1-1-onbuild` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1-1/onbuild.Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1-1-onbuild.svg)](https://microbadger.com/images/ntrrg/md-linter:0.42.1-1-onbuild "Get your own image badge on microbadger.com")
+
+* `0.42.1` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1/Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1.svg)](https://microbadger.com/images/ntrrg/md-linter:0.42.1 "Get your own image badge on microbadger.com")
+
+* `0.41` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.41/Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.41.svg)](https://microbadger.com/images/ntrrg/md-linter:0.41 "Get your own image badge on microbadger.com")
+
+* `0.40.3` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.40.3/Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.40.3.svg)](https://microbadger.com/images/ntrrg/md-linter:0.40.3 "Get your own image badge on microbadger.com")
+
+* `0.40.2` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.40.2/Dockerfile)) [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.40.2.svg)](https://microbadger.com/images/ntrrg/md-linter:0.40.2 "Get your own image badge on microbadger.com")
 
 ## Usage
 
-All the commands from the Hugo CLI are available, use `docker run --rm ntrrg/hugo help` or see the [official documentation](https://gohugo.io/commands/).
+All the commands from the Hugo CLI are available, for extra information use
+`docker run --rm ntrrg/hugo help` or see the [official documentation](https://gohugo.io/commands/).
 
 ```sh
 docker run --rm -it -p 1313:1313 -v /path/to/my/site:/site ntrrg/hugo
@@ -13,7 +24,7 @@ docker run --rm -it -p 1313:1313 -v /path/to/my/site:/site ntrrg/hugo
 If a custom port is needed run:
 
 ```sh
-PORT=8080 docker run \
+PORT=8080; docker run \
   --rm -it \
   -e PORT=$PORT \
   -p $PORT:$PORT \
@@ -49,5 +60,5 @@ Working on this project I use/used:
 
 * [Hugo](https://gohugo.io)
 
-https://github.com/gohugoio/hugo/issues/2205
+*Websocket for LiveReload using wrong port if Hugo binds to port 80.* <https://github.com/gohugoio/hugo/issues/2205>
 
