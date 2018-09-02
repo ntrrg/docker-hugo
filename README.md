@@ -2,7 +2,8 @@
 
 | Tag | Status |
 |-:|:-|
-| `latest`, `0.47.1` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.47.1/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.47.1.svg)](https://microbadger.com/images/ntrrg/hugo:0.47.1) |
+| `latest`, `0.48` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.48/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.48.svg)](https://microbadger.com/images/ntrrg/hugo:0.48) |
+| `0.47.1` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.47.1/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.47.1.svg)](https://microbadger.com/images/ntrrg/hugo:0.47.1) |
 | `0.46` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.46/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.46.svg)](https://microbadger.com/images/ntrrg/hugo:0.46) |
 | `0.42.1.1` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1.1/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1.1.svg)](https://microbadger.com/images/ntrrg/hugo:0.42.1.1) |
 | `0.42.1` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.42.1/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.42.1.svg)](https://microbadger.com/images/ntrrg/hugo:0.42.1) |
