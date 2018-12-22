@@ -9,6 +9,7 @@ RUN \
   rm -rf /tmp/hugo
 EXPOSE 1313
 WORKDIR /site
+USER 1000
 VOLUME /site
 ENTRYPOINT ["/usr/bin/hugo"]
 
