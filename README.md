@@ -1,8 +1,9 @@
-[![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)](https://store.docker.com/community/images/ntrrg/hugo/)
+[![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)](https://cloud.docker.com/u/ntrrg/repository/docker/ntrrg/hugo)
 
 | Tag | Status |
 |-:|:-|
-| `latest`, `0.51` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.51/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.51.svg)](https://microbadger.com/images/ntrrg/hugo:0.51) |
+| `latest`, `0.52` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.52/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.52.svg)](https://microbadger.com/images/ntrrg/hugo:0.52) |
+| `0.51` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.51/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.51.svg)](https://microbadger.com/images/ntrrg/hugo:0.51) |
 | `0.50` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.50/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.50.svg)](https://microbadger.com/images/ntrrg/hugo:0.50) |
 | `0.49.2` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.49.2/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.49.2.svg)](https://microbadger.com/images/ntrrg/hugo:0.49.2) |
 | `0.49` ([Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.49/Dockerfile)) | [![](https://images.microbadger.com/badges/image/ntrrg/hugo:0.49.svg)](https://microbadger.com/images/ntrrg/hugo:0.49) |
@@ -17,22 +18,26 @@
 
 ## Usage
 
-All the commands from the Hugo CLI are available, for extra information use
-`docker run --rm ntrrg/hugo help` or see the [official documentation](https://gohugo.io/commands/).
+Any command from the Hugo CLI might be used, for extra information use `docker run --rm ntrrg/hugo help`
+or see the [official documentation](https://gohugo.io/commands/).
 
 ```shell-session
-docker run --rm -it -p 1313:1313 -v /path/to/my/site:/site ntrrg/hugo
+$ docker run --rm -v /path/to/my/site:/site ntrrg/hugo
 ```
 
-If a custom port is needed run:
+Some extra options are needed to run the Hugo server.
 
 ```shell-session
-PORT=8080; docker run \
-  --rm -it \
-  -e PORT=$PORT \
-  -p $PORT:$PORT \
-  -v /path/to/my/site:/site \
-ntrrg/hugo
+$ docker run --rm -itp 1313:1313 -v /path/to/my/site:/site ntrrg/hugo \
+    server -DEF --bind=0.0.0.0 --baseUrl=/ --appendPort=false
+```
+
+If a custom port is needed, the Hugo server should run in the same port:
+
+```shell-session
+$ export PORT=8080
+$ docker run --rm -itp $PORT:$PORT -v /path/to/my/site:/site ntrrg/hugo \
+    server -DEF --bind=0.0.0.0 --port=$PORT --baseUrl=/ --appendPort=false
 ```
 
 ## Acknowledgment
