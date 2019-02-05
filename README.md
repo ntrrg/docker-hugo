@@ -1,4 +1,4 @@
-[![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)](https://cloud.docker.com/u/ntrrg/repository/docker/ntrrg/hugo)
+[![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)](https://hub.docker.com/r/ntrrg/hugo)
 
 | Tag | Status |
 |-:|:-|
