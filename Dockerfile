@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 ENV HUGO_VERSION="0.54.0"
 WORKDIR /tmp/hugo
 RUN \
