@@ -25,13 +25,13 @@ Any command from the Hugo CLI might be used, for extra information use `docker r
 or see the [official documentation](https://gohugo.io/commands/).
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site ntrrg/hugo
+$ docker run --rm -v /path/to/my/site:/srv ntrrg/hugo
 ```
 
 Some extra options are needed to run the Hugo server.
 
 ```shell-session
-$ docker run --rm -itp 1313:1313 -v /path/to/my/site:/site ntrrg/hugo \
+$ docker run --rm -itp 1313:1313 -v /path/to/my/site:/srv ntrrg/hugo \
     server -DEF --bind=0.0.0.0 --baseUrl=/ --appendPort=false
 ```
 
@@ -39,7 +39,7 @@ If a custom port is needed, the Hugo server should run in the same port:
 
 ```shell-session
 $ export PORT=8080
-$ docker run --rm -itp $PORT:$PORT -v /path/to/my/site:/site ntrrg/hugo \
+$ docker run --rm -itp $PORT:$PORT -v /path/to/my/site:/srv ntrrg/hugo \
     server -DEF --bind=0.0.0.0 --port=$PORT --baseUrl=/ --appendPort=false
 ```
 
