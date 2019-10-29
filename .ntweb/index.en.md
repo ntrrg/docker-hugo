@@ -18,13 +18,13 @@ techs:
 
 **docker-hugo** is a Dockerized [Hugo][] CLI.
 
-{{< toc >}}
-
-<br/>
-
 | Tag | Dockerfile |
 | --: | :-- |
 | `latest`, `0.59.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.59.0/Dockerfile) |
+
+<br/>
+
+{{< toc >}}
 
 # Usage
 
@@ -41,7 +41,8 @@ Since the Hugo binary from the container is called by `root`, it is
 recommendable to add the `-u` Docker flag.
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site -u $(id -u $USER) \
+$ docker run --rm -v /path/to/my/site:/site \
+  -u $(id -u $USER) \
   ntrrg/hugo [OPTIONS] [COMMAND]
 ```
 {{% /note %}}

@@ -18,13 +18,13 @@ techs:
 
 **docker-hugo** es el CLI de [Hugo][] en Docker.
 
-{{< toc >}}
-
-<br/>
-
 | Etiqueta | Dockerfile |
 | --: | :-- |
 | `latest`, `0.59.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.59.0/Dockerfile)) |
+
+<br/>
+
+{{< toc >}}
 
 # Uso
 
@@ -41,7 +41,8 @@ Como el binario de Hugo del contenedor es ejecutado por `root`, es recomendable
 agregar la opción `-u` de Docker.
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site -u $(id -u $USER) \
+$ docker run --rm -v /path/to/my/site:/site \
+  -u $(id -u $USER) \
   ntrrg/hugo [OPCIONES] [COMANDO]
 ```
 {{% /note %}}
