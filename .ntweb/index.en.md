@@ -20,7 +20,8 @@ techs:
 
 | Tag | Dockerfile |
 | --: | :-- |
-| `latest`, `0.59.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.59.0/Dockerfile) |
+| `latest`, `0.59.1` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.59.1/Dockerfile) |
+| `0.59.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.59.0/Dockerfile) |
 
 <br/>
 
@@ -108,6 +109,8 @@ Working on this project I use/used:
 * [Github](https://github.com)
 
 * [Hugo][]
+
+* [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/)
 
 *Websocket for LiveReload using wrong port if Hugo binds to port 80.* <https://github.com/gohugoio/hugo/issues/2205>
 

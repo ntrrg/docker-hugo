@@ -1,5 +1,5 @@
 FROM alpine:3.10
-ARG HUGO_VERSION="0.59.0"
+ARG HUGO_VERSION="0.59.1"
 RUN \
   apk update && apk upgrade && apk add ca-certificates && \
   (update-ca-certificates || true)
@@ -10,6 +10,7 @@ RUN \
   rm "hugo_${HUGO_VERSION}_Linux-64bit.tar.gz"
 EXPOSE 1313
 WORKDIR /site
+VOLUME /tmp
 VOLUME /site
 ENTRYPOINT ["/usr/bin/hugo"]
 
