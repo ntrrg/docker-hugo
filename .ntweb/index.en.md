@@ -4,10 +4,9 @@ description: Dockerized Hugo CLI.
 metadata:
   source-code: https://github.com/ntrrg/docker-hugo
   license: MIT
-kinds:
+tags:
   - cli
-  - container
-techs:
+  - containers
   - docker
   - hugo
 ---
@@ -30,7 +29,7 @@ techs:
 # Usage
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site \
+$ docker run --rm -v /path/to/my/site/:/site/ \
   ntrrg/hugo [OPTIONS] [COMMAND]
 ```
 
@@ -42,44 +41,48 @@ Since the Hugo binary from the container is called by `root`, it is
 recommendable to add the `-u` Docker flag.
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site \
+$ docker run --rm -v /path/to/my/site/:/site/ \
   -u $(id -u $USER) \
+  -v ${TMPDIR:-/tmp/}:/tmp/ \
   ntrrg/hugo [OPTIONS] [COMMAND]
 ```
 {{% /note %}}
 
 ## Examples
 
-* Create new Hugo skeleton
+* Create a new Hugo skeleton
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site ntrrg/hugo new site .
+$ docker run --rm -v /path/to/my/site/:/site/ \
+      ntrrg/hugo new site .
 ```
 
-* Build Hugo project
+* Build a Hugo project
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site ntrrg/hugo
+$ docker run --rm -v /path/to/my/site/:/site/ ntrrg/hugo
 ```
 
-* Run Hugo server
+* Run the Hugo server
 
 ```shell-session
-$ docker run --rm -itp 1313:1313 -v /path/to/my/site:/site \
-  ntrrg/hugo server -DEF --bind=0.0.0.0 \
-    --baseUrl=/ --appendPort=false
+$ docker run --rm -i -t -p 1313:1313 \
+      -v /path/to/my/site/:/site/ \
+      ntrrg/hugo server -DEF --baseUrl=/ \
+        --bind=0.0.0.0 --appendPort=false
 ```
 
-* Run Hugo server with custom port
+* Run the Hugo server with a custom port
 
 ```shell-session
 $ export PORT=8080
 ```
 
 ```shell-session
-$ docker run --rm -itp $PORT:$PORT -v /path/to/my/site:/site \
-  ntrrg/hugo server -DEF --bind=0.0.0.0 --port=$PORT \
-    --baseUrl=/ --appendPort=false
+$ docker run --rm -i -t -p $PORT:$PORT \
+      -v /path/to/my/site/:/site/ \
+      ntrrg/hugo server -DEF --bind=0.0.0.0 --port=$PORT \
+        --baseUrl=/ --appendPort=false
 ```
 
 # Acknowledgment

@@ -4,10 +4,9 @@ description: CLI de Hugo en Docker.
 metadata:
   source-code: https://github.com/ntrrg/docker-hugo
   license: MIT
-kinds:
+tags:
   - cli
   - contenedores
-techs:
   - docker
   - hugo
 ---
@@ -30,20 +29,21 @@ techs:
 # Uso
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site -u "$(id -u "$USER")" \
+$ docker run --rm -v /ruta/a/mi/sitio/:/site/ \
   ntrrg/hugo [OPCIONES] [COMANDO]
 ```
 
-Puede usarse cualquier comando del CLI de Docker, para más información ejecutar
-`docker run --rm ntrrg/hugo help` o ver la [documentación oficial](https://gohugo.io/commands/).
+Puede usarse cualquier comando del CLI de Hugo, para más información ejecutar `docker run --rm ntrrg/hugo help`
+o ver la [documentación oficial](https://gohugo.io/commands/).
 
 {{% note %}}
 Como el binario de Hugo del contenedor es ejecutado por `root`, es recomendable
 agregar la opción `-u` de Docker.
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site \
+$ docker run --rm -v /ruta/a/mi/sitio/:/site/ \
   -u $(id -u $USER) \
+  -v ${TMPDIR:-/tmp/}:/tmp/ \
   ntrrg/hugo [OPCIONES] [COMANDO]
 ```
 {{% /note %}}
@@ -53,21 +53,23 @@ $ docker run --rm -v /path/to/my/site:/site \
 * Crear el esqueleto de un projecto Hugo
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site ntrrg/hugo new site .
+$ docker run --rm -v /ruta/a/mi/sitio/:/site/ \
+      ntrrg/hugo new site .
 ```
 
 * Construir un proyecto Hugo
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site:/site ntrrg/hugo
+$ docker run --rm -v /ruta/a/mi/sitio/:/site/ ntrrg/hugo
 ```
 
 * Ejecutar el servidor de Hugo
 
 ```shell-session
-$ docker run --rm -itp 1313:1313 -v /path/to/my/site:/site \
-  ntrrg/hugo server -DEF --bind=0.0.0.0 \
-    --baseUrl=/ --appendPort=false
+$ docker run --rm -i -t -p 1313:1313 \
+      -v /ruta/a/mi/sitio/:/site/ \
+      ntrrg/hugo server -DEF --bind=0.0.0.0 \
+        --baseUrl=/ --appendPort=false
 ```
 
 * Ejecutar el servidor de Hugo en un puerto personalizado
@@ -77,9 +79,10 @@ $ export PORT=8080
 ```
 
 ```shell-session
-$ docker run --rm -itp $PORT:$PORT -v /path/to/my/site:/site \
-  ntrrg/hugo server -DEF --bind=0.0.0.0 --port=$PORT \
-    --baseUrl=/ --appendPort=false
+$ docker run --rm -i -t -p $PORT:$PORT \
+      -v /path/to/my/site:/site \
+      ntrrg/hugo server -DEF --bind=0.0.0.0 --port=$PORT \
+        --baseUrl=/ --appendPort=false
 ```
 
 # Atribuciones
