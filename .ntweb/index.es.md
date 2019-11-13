@@ -1,9 +1,6 @@
 ---
 title: docker-hugo
 description: CLI de Hugo en Docker.
-metadata:
-  source-code: https://github.com/ntrrg/docker-hugo
-  license: MIT
 tags:
   - cli
   - contenedores
