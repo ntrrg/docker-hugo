@@ -108,7 +108,7 @@ Working on this project I use/used:
 
 * [Github](https://github.com)
 
-* [Hugo][]
+* [Hugo](https://gohugo.io)
 
 * [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/)
 
