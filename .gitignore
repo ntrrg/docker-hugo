@@ -1,2 +1,16 @@
-*.swp
+nogit-*
+
+# MacOS
+.DS_Store
+
+# Sublime Text
+*.sublime*
+
+# GNU Screen
+.screenrc
+
+# Vim
+*.sw[op]
+Session.vim
+*~
 

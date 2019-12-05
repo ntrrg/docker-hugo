@@ -1,10 +1,19 @@
+hugo_version := 0.60.1
 hugo_port := 1313
 
 .PHONY: all
 all:
 
-.PHONY: docs
-docs:
+.PHONY: bump-version-hugo
+bump-version-hugo:
+	@grep -lR "$(hugo_version)" . | \
+		grep -v "^\./\.git/" | \
+		grep -v "\.swp\$$" | \
+		grep -v "^\./go\.sum" | \
+		grep -v "^\./content/"
+
+.PHONY: doc
+doc:
 	@echo "http://localhost:$(hugo_port)/en/projects/docker-hugo/"
 	@echo "http://localhost:$(hugo_port)/es/projects/docker-hugo/"
 	@docker run --rm -it \
