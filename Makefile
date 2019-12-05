@@ -8,9 +8,7 @@ all:
 bump-version-hugo:
 	@grep -lR "$(hugo_version)" . | \
 		grep -v "^\./\.git/" | \
-		grep -v "\.swp\$$" | \
-		grep -v "^\./go\.sum" | \
-		grep -v "^\./content/"
+		grep -v "\.swp\$$"
 
 .PHONY: doc
 doc:
