@@ -6,6 +6,7 @@ tags:
   - contenedores
   - docker
   - hugo
+toc: true
 ---
 
 [![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)](https://hub.docker.com/r/ntrrg/hugo)
@@ -21,8 +22,6 @@ tags:
 | `0.59.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.59.0/Dockerfile) |
 
 <br/>
-
-{{< toc >}}
 
 # Uso
 
