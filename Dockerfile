@@ -1,5 +1,5 @@
 FROM alpine:3.10
-ARG HUGO_VERSION="0.61.0"
+ARG HUGO_VERSION="0.62.2"
 RUN \
   apk update && apk upgrade && apk add ca-certificates && \
   (update-ca-certificates || true)
