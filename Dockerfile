@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.11
 ARG HUGO_VERSION="0.64.0"
 RUN \
   apk update && apk upgrade && apk add ca-certificates && \
