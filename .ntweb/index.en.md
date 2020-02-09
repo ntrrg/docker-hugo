@@ -37,7 +37,7 @@ $ docker run --rm -v /path/to/my/site/:/site/ \
 Any command from the Hugo CLI might be used, for extra information use `docker run --rm ntrrg/hugo help`
 or see the [official documentation](https://gohugo.io/commands/).
 
-{{% note %}}
+{{< note >}}
 Since the Hugo binary from the container is called by `root`, it is
 recommendable to add the `-u` Docker flag.
 
@@ -47,7 +47,7 @@ $ docker run --rm -v /path/to/my/site/:/site/ \
   -v ${TMPDIR:-/tmp/}:/tmp/ \
   ntrrg/hugo [OPTIONS] [COMMAND]
 ```
-{{% /note %}}
+{{< /note >}}
 
 ## Examples
 
