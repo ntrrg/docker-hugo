@@ -17,7 +17,8 @@ comments: true
 
 | Etiqueta | Dockerfile |
 | --: | :-- |
-| `latest`, `0.65.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.65.2/Dockerfile) |
+| `latest`, `0.65.3` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.65.3/Dockerfile) |
+| `0.65.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.65.2/Dockerfile) |
 | `0.64.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.64.0/Dockerfile) |
 | `0.63.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.63.2/Dockerfile) |
 | `0.62.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.62.2/Dockerfile) |
