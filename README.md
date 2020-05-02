@@ -2,5 +2,5 @@
 
 Dockerized Hugo CLI.
 
-See <https://nt.web.ve/en/projects/docker-hugo/>
+See <https://ntrrg.dev/en/projects/docker-hugo/>
 
