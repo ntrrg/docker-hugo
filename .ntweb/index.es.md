@@ -1,8 +1,11 @@
 ---
+metadata:
+  website: https://hub.docker.com/r/ntrrg/hugo
 title: docker-hugo
 description: CLI de Hugo en Docker.
 tags:
-  - contenedores
+  - contenedor
+  - cli
   - docker
   - hugo
 toc: true
@@ -17,31 +20,31 @@ comments: true
 
 | Etiqueta | Dockerfile |
 | --: | :-- |
-| `latest`, `0.69.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.69.2/Dockerfile) |
+| `latest`, `0.70.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.70.0/Dockerfile) |
+| `0.69.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.69.2/Dockerfile) |
 | `0.68.3` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.68.3/Dockerfile) |
-| `0.67.1` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.67.1/Dockerfile) |
 
 # Uso
 
 ```shell-session
 $ docker run --rm -v /ruta/a/mi/sitio/:/site/ \
-  ntrrg/hugo [OPCIONES] [COMANDO]
+    ntrrg/hugo [OPCIONES] [COMANDO]
 ```
 
 Puede usarse cualquier comando del CLI de Hugo, para más información ejecutar `docker run --rm ntrrg/hugo help`
 o ver la [documentación oficial](https://gohugo.io/commands/).
 
-{{< note >}}
+{{% note %}}
 Como el binario de Hugo del contenedor es ejecutado por `root`, es recomendable
 agregar la opción `-u` de Docker.
 
 ```shell-session
 $ docker run --rm -v /ruta/a/mi/sitio/:/site/ \
-  -u $(id -u $USER) \
-  -v ${TMPDIR:-/tmp/}:/tmp/ \
-  ntrrg/hugo [OPCIONES] [COMANDO]
+    -u $(id -u $USER) \
+    -v ${TMPDIR:-/tmp/}:/tmp/ \
+    ntrrg/hugo [OPCIONES] [COMANDO]
 ```
-{{< /note >}}
+{{% /note %}}
 
 ## Ejemplos
 
@@ -49,7 +52,7 @@ $ docker run --rm -v /ruta/a/mi/sitio/:/site/ \
 
 ```shell-session
 $ docker run --rm -v /ruta/a/mi/sitio/:/site/ \
-      ntrrg/hugo new site .
+    ntrrg/hugo new site .
 ```
 
 * Construir un proyecto Hugo
@@ -62,8 +65,8 @@ $ docker run --rm -v /ruta/a/mi/sitio/:/site/ ntrrg/hugo
 
 ```shell-session
 $ docker run --rm -i -t -p 1313:1313 \
-      -v /ruta/a/mi/sitio/:/site/ \
-      ntrrg/hugo server -DEF --bind=0.0.0.0 \
+    -v /ruta/a/mi/sitio/:/site/ \
+    ntrrg/hugo server -DEF --bind=0.0.0.0 \
         --baseUrl=/ --appendPort=false
 ```
 
@@ -75,8 +78,8 @@ $ export PORT=8080
 
 ```shell-session
 $ docker run --rm -i -t -p $PORT:$PORT \
-      -v /path/to/my/site:/site \
-      ntrrg/hugo server -DEF --bind=0.0.0.0 --port=$PORT \
+    -v /path/to/my/site:/site \
+    ntrrg/hugo server -DEF --bind=0.0.0.0 --port=$PORT \
         --baseUrl=/ --appendPort=false
 ```
 
