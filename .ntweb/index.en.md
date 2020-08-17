@@ -20,7 +20,8 @@ comments: true
 
 | Tag | Dockerfile |
 | --: | :-- |
-| `latest`, `0.73.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.73.0/Dockerfile) |
+| `latest`, `0.74.3` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.74.3/Dockerfile) |
+| `0.73.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.73.0/Dockerfile) |
 | `0.72.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.72.0/Dockerfile) |
 | `0.70.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.70.0/Dockerfile) |
 
