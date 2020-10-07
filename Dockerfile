@@ -1,10 +1,10 @@
-FROM alpine:3.11
-ARG HUGO_VERSION="0.75.1"
+FROM alpine:3.12
+ARG HUGO_VERSION="0.76.2"
 RUN \
-  apk update && apk upgrade && apk add ca-certificates && \
+  apk update && apk upgrade && apk add ca-certificates git && \
   (update-ca-certificates || true)
 RUN \
-  wget -O "/tmp/hugo.tar.gz" "https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz" && \
+  wget -O "/tmp/hugo.tar.gz" "https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" && \
   tar -xf "/tmp/hugo.tar.gz" --exclude "README.md" --exclude "LICENSE" -C "/usr/bin/" && \
   rm "/tmp/hugo.tar.gz"
 EXPOSE 1313
