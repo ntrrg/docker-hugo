@@ -10,6 +10,8 @@ jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
+    env:
+      DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE }}
     steps:
       - name: Get source code
         uses: actions/checkout@v2
@@ -20,19 +22,27 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 
-      - name: "Build and push images (latest)"
+      - name: "Build and push 'latest'"
         if: ${{ github.ref == 'refs/heads/master' }}
         run: |
-          docker build -t ntrrg/hugo .
-          docker build -t ntrrg/hugo -f extended.Dockerfile .
-          docker push ntrrg/hugo
-          docker push ntrrg/hugo:extended
+          docker build -t $DOCKER_IMAGE .
+          docker push $DOCKER_IMAGE
 
-      - name: "Build and push images (versions)"
+      - name: "Build and push 'extended'"
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: |
+          docker build -t $DOCKER_IMAGE -f extended.Dockerfile .
+          docker push $DOCKER_IMAGE:extended
+
+      - name: "Build and push versioned images"
         if: ${{ startsWith(github.ref, 'refs/tags/v') }}
         run: |
-          docker build -t ntrrg/hugo:"${GITHUB_REF:11}" .
-          docker build -t ntrrg/hugo:"${GITHUB_REF:11}-extended" -f extended.Dockerfile .
-          docker push ntrrg/hugo:"${GITHUB_REF:11}"
-          docker push ntrrg/hugo:"${GITHUB_REF:11}-extended"
+          docker build -t $DOCKER_IMAGE:"${GITHUB_REF:11}" .
+          docker push $DOCKER_IMAGE:"${GITHUB_REF:11}"
+
+      - name: "Build and push versioned images (extended)"
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        run: |
+          docker build -t $DOCKER_IMAGE:"${GITHUB_REF:11}-extended" -f extended.Dockerfile .
+          docker push $DOCKER_IMAGE:"${GITHUB_REF:11}-extended"
 
