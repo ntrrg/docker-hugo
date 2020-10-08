@@ -31,7 +31,7 @@ jobs:
       - name: "Build and push 'extended'"
         if: ${{ github.ref == 'refs/heads/master' }}
         run: |
-          docker build -t $DOCKER_IMAGE -f extended.Dockerfile .
+          docker build -t $DOCKER_IMAGE:extended -f extended.Dockerfile .
           docker push $DOCKER_IMAGE:extended
 
       - name: "Build and push versioned images"
