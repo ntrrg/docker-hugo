@@ -20,10 +20,10 @@ tags:
 | --: | :-- |
 | `latest`, `0.76.3` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.3/Dockerfile) |
 | `extended`, `0.76.3-extended` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.3/extended.Dockerfile) |
-| `0.74.3` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.74.3/Dockerfile) |
-| `0.73.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.73.0/Dockerfile) |
-| `0.72.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.72.0/Dockerfile) |
-| `0.70.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.70.0/Dockerfile) |
+| `docs`, `0.76.3-docs` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.3/docs.Dockerfile) |
+
+Cada imagen tiene las variaciones `extended` y `docs`. La primera contiene la
+versión extendida de Hugo, y la segunda es el sitio web de Hugo.
 
 # Uso
 

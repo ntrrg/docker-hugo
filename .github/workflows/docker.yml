@@ -34,6 +34,12 @@ jobs:
           docker build -t $DOCKER_IMAGE:extended -f extended.Dockerfile .
           docker push $DOCKER_IMAGE:extended
 
+      - name: "Build and push 'docs'"
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: |
+          docker build -t $DOCKER_IMAGE:docs -f docs.Dockerfile .
+          docker push $DOCKER_IMAGE:docs
+
       - name: "Build and push versioned images"
         if: ${{ startsWith(github.ref, 'refs/tags/v') }}
         run: |
@@ -45,4 +51,10 @@ jobs:
         run: |
           docker build -t $DOCKER_IMAGE:"${GITHUB_REF:11}-extended" -f extended.Dockerfile .
           docker push $DOCKER_IMAGE:"${GITHUB_REF:11}-extended"
+
+      - name: "Build and push versioned images (docs)"
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        run: |
+          docker build -t $DOCKER_IMAGE:"${GITHUB_REF:11}-docs" -f docs.Dockerfile .
+          docker push $DOCKER_IMAGE:"${GITHUB_REF:11}-docs"
 

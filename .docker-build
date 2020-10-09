@@ -1,3 +1,4 @@
 Dockerfile@ntrrg/hugo
 extended.Dockerfile@ntrrg/hugo:extended
+docs.Dockerfile@ntrrg/hugo:docs
 
