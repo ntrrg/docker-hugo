@@ -9,7 +9,7 @@ RUN \
 WORKDIR /src
 RUN \
   git clone --depth 1 -b "v$HUGO_VERSION" "https://github.com/gohugoio/hugo.git" . && \
-  HUGO_BUILD_TAGS="extended" mage hugo && mage install
+  HUGO_BUILD_TAGS="extended"; mage hugo && mage install
 
 FROM alpine:3.12
 RUN \
