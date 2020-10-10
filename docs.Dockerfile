@@ -10,7 +10,7 @@ RUN \
 WORKDIR /tmp/hugoDocs
 RUN \
   git clone --depth 1 -b "v$HUGO_VERSION" "https://github.com/gohugoio/hugoDocs.git" . && \
-  ./pull-theme.sh && hugo --baseUrl / -d /public
+  hugo --baseUrl / -d /public
 
 FROM ntrrg/nginx:http
 COPY --from=hugo /public /usr/share/nginx/html
