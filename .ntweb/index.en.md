@@ -18,9 +18,9 @@ tags:
 
 | Tag | Dockerfile |
 | --: | :-- |
-| `latest`, `0.76.3` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.3/Dockerfile) |
-| `extended`, `0.76.3-extended` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.3/extended.Dockerfile) |
-| `docs`, `0.76.3-docs` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.3/docs.Dockerfile) |
+| `latest`, `0.76.5` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.5/Dockerfile) |
+| `extended`, `0.76.5-extended` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.5/extended.Dockerfile) |
+| `docs`, `0.76.5-docs` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.5/docs.Dockerfile) |
 
 Every image has the `extended` and `docs` variations. The first one contains
 the Hugo extended version binary, and the second one is the Hugo website.
