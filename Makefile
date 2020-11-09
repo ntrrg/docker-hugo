@@ -1,22 +1,22 @@
-hugo_version := 0.76.5
-hugo_port := 1313
+HUGO_VERSION ?= 0.78.1
+HUGO_PORT ?= 1313
 
 .PHONY: all
 all:
 
 .PHONY: bump-version-hugo
 bump-version-hugo:
-	@grep -lR "$(hugo_version)" . | \
+	@grep -lR "$(HUGO_VERSION)" . | \
 		grep -v "^\./\.git/" | \
 		grep -v "\.swp\$$"
 
 .PHONY: doc
 doc:
-	@echo "http://localhost:$(hugo_port)/en/projects/docker-hugo/"
-	@echo "http://localhost:$(hugo_port)/es/projects/docker-hugo/"
+	@echo "http://localhost:$(HUGO_PORT)/en/projects/docker-hugo/"
+	@echo "http://localhost:$(HUGO_PORT)/es/projects/docker-hugo/"
 	@docker run --rm -it \
-		-e PORT=$(hugo_port) \
-		-p $(hugo_port):$(hugo_port) \
+		-e PORT=$(HUGO_PORT) \
+		-p $(HUGO_PORT):$(HUGO_PORT) \
 		-v "$$PWD/.ntweb":/site/content/projects/docker-hugo/ \
-		ntrrg/ntweb:editing --port $(hugo_port)
+		ntrrg/ntweb:editing --port $(HUGO_PORT)
 
