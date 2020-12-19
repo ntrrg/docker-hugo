@@ -18,9 +18,10 @@ tags:
 
 | Etiqueta | Dockerfile |
 | --: | :-- |
-| `latest`, `0.78.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.78.2/Dockerfile) |
-| `extended`, `0.78.2-extended` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.78.2/extended.Dockerfile) |
-| `docs`, `0.78.2-docs` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.78.2/docs.Dockerfile) |
+| `latest`, `0.79.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.79.0/Dockerfile) |
+| `extended`, `0.79.0-extended` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.79.0/extended.Dockerfile) |
+| `docs`, `0.79.0-docs` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.79.0/docs.Dockerfile) |
+| `0.78.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.78.2/Dockerfile) |
 | `0.76.5` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.5/Dockerfile) |
 
 Cada imagen tiene las variaciones `extended` y `docs`. La primera contiene la
