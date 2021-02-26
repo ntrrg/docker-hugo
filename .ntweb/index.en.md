@@ -18,10 +18,11 @@ tags:
 
 | Tag | Dockerfile |
 | --: | :-- |
-| `latest`, `0.80.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.80.0/Dockerfile) |
-| `extended`, `0.80.0-extended` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.80.0/extended.Dockerfile) |
-| `docs`, `0.80.0-docs` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.80.0/docs.Dockerfile) |
+| `latest`, `0.81.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.81.0/Dockerfile) |
+| `extended`, `0.81.0-extended` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.81.0/extended.Dockerfile) |
+| `docs`, `0.81.0-docs` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.81.0/docs.Dockerfile) |
 | `0.80.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.80.0/Dockerfile) |
+| `0.79.1` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.79.1/Dockerfile) |
 | `0.78.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.78.2/Dockerfile) |
 | `0.76.5` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.5/Dockerfile) |
 
@@ -31,7 +32,7 @@ the Hugo extended version binary, and the second one is the Hugo website.
 # Usage
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site/:/site/ \
+$ docker run -v /path/to/my/site/:/site/ \
     ntrrg/hugo [OPTIONS] [COMMAND]
 ```
 
@@ -43,7 +44,7 @@ Since the Hugo binary from the container is called by `root`, it is
 recommendable to add the `-u` Docker flag.
 
 ```shell-session
-$ docker run --rm -v /path/to/my/site/:/site/ \
+$ docker run -v /path/to/my/site/:/site/ \
     -u $(id -u $USER) \
     -v ${TMPDIR:-/tmp/}:/tmp/ \
     ntrrg/hugo [OPTIONS] [COMMAND]

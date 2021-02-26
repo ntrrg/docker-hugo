@@ -1,7 +1,7 @@
-FROM golang:1.15-alpine3.12 AS build
-ARG HUGO_VERSION="0.80.0"
-RUN apk update && apk upgrade && apk add gcc git g++ musl-dev
+FROM golang:1.16-alpine3.13 AS build
+ARG HUGO_VERSION="0.81.0"
 RUN \
+  apk add --no-cache gcc git g++ musl-dev && \
   wget -qO "/tmp/mage.tar.gz" "https://github.com/magefile/mage/releases/download/v1.10.0/mage_1.10.0_Linux-64bit.tar.gz" && \
   tar -xf "/tmp/mage.tar.gz" -C "/tmp/" && \
   cp "/tmp/mage" "/usr/bin/" && \
@@ -11,9 +11,9 @@ RUN \
   git clone --depth 1 -b "v$HUGO_VERSION" "https://github.com/gohugoio/hugo.git" . && \
   HUGO_BUILD_TAGS="extended" mage install
 
-FROM alpine:3.12
+FROM alpine:3.13
 RUN \
-  apk update && apk upgrade && apk add ca-certificates libc6-compat libstdc++ git && \
+  apk add --no-cache ca-certificates libc6-compat libstdc++ git && \
   (update-ca-certificates || true)
 COPY --from=build /go/bin/hugo /usr/bin/hugo
 EXPOSE 1313
