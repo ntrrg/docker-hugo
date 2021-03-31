@@ -1,5 +1,5 @@
 FROM golang:1.16-alpine3.13 AS build
-ARG HUGO_VERSION="0.81.0"
+ARG HUGO_VERSION="0.82.0"
 RUN \
   apk add --no-cache gcc git g++ musl-dev && \
   wget -qO "/tmp/mage.tar.gz" "https://github.com/magefile/mage/releases/download/v1.10.0/mage_1.10.0_Linux-64bit.tar.gz" && \
