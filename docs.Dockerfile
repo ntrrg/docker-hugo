@@ -1,5 +1,5 @@
-FROM alpine:3.13 as hugo
-ARG HUGO_VERSION="0.82.0"
+FROM alpine:3.13 as build
+ARG HUGO_VERSION="0.85.0"
 RUN \
   apk add --no-cache ca-certificates git && \
   (update-ca-certificates || true) && \
@@ -12,5 +12,5 @@ RUN \
   hugo --baseUrl / -d /public
 
 FROM ntrrg/nginx:http
-COPY --from=hugo /public /usr/share/nginx/html
+COPY --from=build /public /usr/share/nginx/html
 

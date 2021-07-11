@@ -1,4 +1,4 @@
-[![Docker Build Status](https://img.shields.io/docker/build/ntrrg/hugo.svg)](https://hub.docker.com/r/ntrrg/hugo)
+[![GitHub Actions](https://github.com/ntrrg/docker-hugo/workflows/Docker/badge.svg)](https://github.com/ntrrg/docker-hugo/actions?query=workflow:Docker)
 
 Dockerized Hugo CLI.
 

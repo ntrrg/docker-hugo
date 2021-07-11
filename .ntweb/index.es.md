@@ -18,14 +18,13 @@ tags:
 
 | Etiqueta | Dockerfile |
 | --: | :-- |
-| `latest`, `0.82.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.82.0/Dockerfile) |
-| `extended`, `0.82.0-extended` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.82.0/extended.Dockerfile) |
-| `docs`, `0.82.0-docs` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.82.0/docs.Dockerfile) |
+| `latest`, `0.85.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.85.0/Dockerfile) |
+| `extended`, `0.85.0-extended` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.85.0/extended.Dockerfile) |
+| `docs`, `0.85.0-docs` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.85.0/docs.Dockerfile) |
+| `0.82.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.82.0/Dockerfile) |
 | `0.81.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.81.0/Dockerfile) |
 | `0.80.0` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.80.0/Dockerfile) |
 | `0.79.1` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.79.1/Dockerfile) |
-| `0.78.2` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.78.2/Dockerfile) |
-| `0.76.5` | [Dockerfile](https://github.com/ntrrg/docker-hugo/blob/0.76.5/Dockerfile) |
 
 Cada imagen tiene las variaciones `extended` y `docs`. La primera contiene la
 versión extendida de Hugo, y la segunda es el sitio web de Hugo.
